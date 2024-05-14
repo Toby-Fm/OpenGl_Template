@@ -4,16 +4,19 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
+    /* Ändere die Größe des Viewports */
     glViewport(0, 0, width, height);
 }
 
 void processInput(GLFWwindow *window)
 {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    /* Überprüfe, ob die ESC-Taste gedrückt wird, und schließe das Fenster */
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, true);
+    }
 }
 
-/* Settings */
+/* Einstellungen */
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
@@ -32,3 +35,4 @@ const char *fragmentShaderSource = "#version 330 core\n"
     "{\n"
     "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
     "}\n\0";
+
